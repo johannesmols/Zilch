@@ -3,9 +3,9 @@
 
 #define REGISTERS_NUMBER 40
 
-#define REGISTER_LENGTH 16
+// #define REGISTER_LENGTH 16
 // #define REGISTER_LENGTH 32
-// #define REGISTER_LENGTH 64
+#define REGISTER_LENGTH 64
 
 #define __PARALLEL__
 
