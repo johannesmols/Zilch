@@ -1,0 +1,29 @@
+name: Makefile CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+  
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+      
+    - name: Install dependencies
+      run: |
+        apt install g++ libssl-dev libboost-all-dev libjsoncpp-dev
+        apt-get install libgtest-dev
+      
+    - name: Build
+      run: make -j2
+    
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v3.1.0
+      with:
+         name: Regular build artifact
+         path: ./zilch
