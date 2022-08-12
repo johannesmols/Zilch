@@ -19,8 +19,12 @@ jobs:
         sudo apt install g++ libssl-dev libboost-all-dev libjsoncpp-dev
         sudo apt-get install libgtest-dev
       
+    - name: Setup Emscripten SDK
+      uses: mymindstorm/setup-emsdk@v11
+      run: emcc -v
+
     - name: Build
-      run: make -j2
+      run: emmake make -j2
     
     - name: Upload build artifact
       uses: actions/upload-artifact@v3.1.0
