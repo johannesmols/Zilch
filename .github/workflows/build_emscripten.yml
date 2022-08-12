@@ -1,4 +1,4 @@
-name: Makefile CI
+name: Build with Emscripten
 
 on:
   push:
@@ -21,6 +21,8 @@ jobs:
       
     - name: Setup Emscripten SDK
       uses: mymindstorm/setup-emsdk@v11
+
+    - name: Verify
       run: emcc -v
 
     - name: Build
