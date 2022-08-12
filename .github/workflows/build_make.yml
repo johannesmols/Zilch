@@ -16,8 +16,8 @@ jobs:
       
     - name: Install dependencies
       run: |
-        apt install g++ libssl-dev libboost-all-dev libjsoncpp-dev
-        apt-get install libgtest-dev
+        sudo apt install g++ libssl-dev libboost-all-dev libjsoncpp-dev
+        sudo apt-get install libgtest-dev
       
     - name: Build
       run: make -j2
